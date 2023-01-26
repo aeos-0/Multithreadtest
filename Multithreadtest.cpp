@@ -34,9 +34,11 @@ int main()
 {
     cout << "Lets get started!" << endl << "Program will begin in 5 seconds" << endl;
     this_thread::sleep_for(5000ms);
-    std::thread(function1);
-    std::thread(function2);
-    std::thread(function3);
+    thread threadname1(function1);
+    thread threadname2(function2);
+    thread threadname3(function3);
+
+    system("pause>nul");
 }
 
 
