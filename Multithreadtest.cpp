@@ -2,10 +2,41 @@
 //
 
 #include <iostream>
+#include <thread>
+#include <chrono>
+using namespace std;
+
+void function1() {
+    
+    for (int i = 0; i < 50; i++) {
+        cout << "Thread 1 ";
+    }   
+
+}
+
+void function2() {
+   
+    for (int i = 0; i < 50; i++) {
+        cout << "Thread 2 ";
+    }
+
+}
+
+
+void function3() {
+    
+    for (int i = 0; i < 50; i++) {
+        cout << "Thread 3 ";
+   }
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    cout << "Lets get started!" << endl << "Program will begin in 5 seconds" << endl;
+    this_thread::sleep_for(5000ms);
+    std::thread(function1);
+    std::thread(function2);
+    std::thread(function3);
 }
 
 
